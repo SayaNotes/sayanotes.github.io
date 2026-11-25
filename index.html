@@ -13,11 +13,11 @@ a{color:inherit;text-decoration:none}.wrap{width:min(1080px,calc(100% - 40px));m
 nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}
 .brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:.02em}.mark{width:34px;height:34px;border:1px solid #555;border-radius:11px;display:grid;place-items:center;background:linear-gradient(145deg,#252525,#090909);font-size:18px}
 .navlinks{display:flex;gap:25px;color:#b8b8b8;font-size:14px}.navlinks a:hover{color:white}
-.hero{text-align:center;padding:112px 0 92px}.eyebrow{color:#aaa;text-transform:uppercase;letter-spacing:.22em;font-size:11px}.hero h1{font-size:clamp(58px,10vw,104px);letter-spacing:-.075em;line-height:1;margin:20px 0 22px;font-weight:650}.tagline{font-size:clamp(17px,2.4vw,22px);color:#c4c4c4;max-width:600px;margin:0 auto}.actions{display:flex;justify-content:center;gap:12px;margin-top:34px;flex-wrap:wrap}.btn{padding:12px 21px;border-radius:999px;border:1px solid #444;font-weight:600;font-size:14px}.primary{background:#f5f5f5;color:#090909;border-color:#f5f5f5}.secondary{background:#151515}.hint{font-size:12px;color:#777;margin-top:14px}
+.hero{text-align:center;padding:112px 0 92px}.eyebrow{color:#aaa;text-transform:uppercase;letter-spacing:.22em;font-size:11px}.hero h1{font-size:clamp(58px,10vw,104px);letter-spacing:-.075em;line-height:1;margin:20px 0 22px;font-weight:650}.tagline{font-size:clamp(17px,2.4vw,22px);color:#c4c4c4;max-width:600px;margin:0 auto}.actions{display:flex;justify-content:center;gap:12px;margin-top:34px;flex-wrap:wrap}.btn{padding:12px 21px;border-radius:999px;border:1px solid #444;font-weight:600;font-size:14px;display:inline-flex;align-items:center;justify-content:center}.primary{background:#f5f5f5;color:#090909;border-color:#f5f5f5}.secondary{background:#151515}.hint{font-size:12px;color:#777;margin-top:14px}
 .preview{width:min(760px,100%);margin:10px auto 0;border:1px solid #333;border-radius:24px;padding:12px;background:linear-gradient(145deg,#1b1b1b,#0d0d0d);box-shadow:0 30px 100px #000}.mock{min-height:280px;border-radius:15px;background:#090909;border:1px solid #252525;display:grid;place-items:center;text-align:center;padding:35px}.mocklogo{font-size:52px;letter-spacing:-.08em;font-weight:650}.mock p{color:#777;margin:8px 0 0;font-size:13px}
 section{padding:76px 0;border-top:1px solid #ffffff12}.sectionhead{text-align:center;margin-bottom:35px}.sectionhead h2{font-size:32px;letter-spacing:-.04em;margin:0 0 8px}.sectionhead p{color:var(--muted);margin:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tile{padding:23px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#141414,#0d0d0d)}.tile .symbol{font-size:22px;color:#ddd}.tile h3{margin:14px 0 5px;font-size:17px}.tile p{margin:0;color:#999;font-size:14px}
 .about{max-width:680px;margin:auto;text-align:center;color:#aaa}.about strong{color:#eee}
-.download{text-align:center;background:linear-gradient(180deg,transparent,#14141466,transparent)}.download h2{font-size:34px;margin:0 0 8px}.download p{color:#999;margin:0 auto 22px}.disabled{opacity:.55;cursor:not-allowed;display:inline-block}
+.download{text-align:center;background:linear-gradient(180deg,transparent,#14141466,transparent)}.download h2{font-size:34px;margin:0 0 8px}.download p{color:#999;margin:0 auto 22px}
 footer{border-top:1px solid #ffffff12;padding:28px 0;color:#777;font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:700px){.navlinks{gap:13px;font-size:12px}.hero{padding:82px 0 62px}.grid{grid-template-columns:1fr}.mock{min-height:210px}section{padding:58px 0}}
 </style>
@@ -31,7 +31,7 @@ footer{border-top:1px solid #ffffff12;padding:28px 0;color:#777;font-size:12px}.
 <h1>Saya.</h1>
 <p class="tagline">Some things are beautiful simply because they stay. ❤️</p>
 <div class="actions"><a class="btn primary" href="#download">Get Saya</a><a class="btn secondary" href="#features">Explore features</a></div>
-<div class="hint">Made for thoughts worth keeping.</div>
+<div class="hint">Android · Version 1.0.1 · Free download</div>
 <div class="preview"><div class="mock"><div><div class="mocklogo">saya.</div><p>Your thoughts. Your space. Your pace.</p></div></div></div>
 </header>
 <section id="features"><div class="sectionhead"><h2>Made for focus.</h2><p>A thoughtful space to write, sketch and organise.</p></div>
@@ -41,7 +41,7 @@ footer{border-top:1px solid #ffffff12;padding:28px 0;color:#777;font-size:12px}.
 <article class="tile"><div class="symbol">◫</div><h3>Your own workspace</h3><p>A clean, dark interface designed to keep attention on what matters.</p></article>
 </div></section>
 <section id="about"><div class="sectionhead"><h2>Less noise. More meaning.</h2></div><p class="about"><strong>Saya</strong> is a note-taking space built around a simple idea: your thoughts deserve somewhere calm to stay. Create, collect and return to the things that matter.</p></section>
-<section class="download" id="download"><div class="sectionhead"><h2>Keep Saya close.</h2><p>The Android download will appear here when the APK is added.</p></div><span class="btn secondary disabled" aria-disabled="true">APK coming soon</span></section>
+<section class="download" id="download"><div class="sectionhead"><h2>Keep Saya close.</h2><p>Download the latest Android release directly to your device.</p></div><a class="btn primary" href="https://github.com/SayaNotes/sayanotes.github.io/releases/download/v1.0.1/Saya.apk" download="Saya.apk"><span aria-hidden="true">↓</span>&nbsp; Download Saya APK</a><div class="hint">Version 1.0.1 · Android APK · 68 MB</div></section>
 </main>
 <footer><div class="foot"><span>© <span id="year"></span> Saya</span><span>Some things are beautiful simply because they stay. ❤️</span></div></footer>
 </div>
