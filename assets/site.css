@@ -105,3 +105,36 @@
 .chapter-panel .chapter-copy,.chapter-panel .stroke-art,.chapter-panel .mini-device,.chapter-panel .book-art{backface-visibility:hidden;}
 .chapter-progress-fill{width:100%!important;transform:scaleX(var(--chapter-progress,0));transform-origin:left center;transition:none!important;}
 @media(max-width:760px){.chapter-sticky{contain:none!important;overflow:clip!important}.chapter-panel{opacity:1!important;}}
+
+
+/* Native scroll-driven chapter camera: no scroll-event JS on supported browsers */
+@supports (animation-timeline: view()) {
+ .chapter-scroll{view-timeline-name:--saya-chapters;view-timeline-axis:block}
+ .chapter-track{
+  animation-name:saya-chapter-travel;
+  animation-duration:auto;
+  animation-timing-function:linear;
+  animation-fill-mode:both;
+  animation-timeline:--saya-chapters;
+  animation-range:contain 0% contain 100%;
+ }
+ .chapter-progress-fill{
+  width:100%!important;
+  transform:scaleX(0);
+  transform-origin:left center;
+  animation-name:saya-chapter-progress;
+  animation-duration:auto;
+  animation-timing-function:linear;
+  animation-fill-mode:both;
+  animation-timeline:--saya-chapters;
+  animation-range:contain 0% contain 100%;
+ }
+}
+@keyframes saya-chapter-travel{
+ from{transform:translate3d(0,0,0)}
+ to{transform:translate3d(-66.6667%,0,0)}
+}
+@keyframes saya-chapter-progress{
+ from{transform:scaleX(0)}
+ to{transform:scaleX(1)}
+}
