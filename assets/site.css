@@ -359,3 +359,69 @@
 .origin-visual.creator-photo img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom;align-self:flex-end;position:relative;z-index:1}
 @media(max-width:900px){.origin-visual.creator-photo{height:440px;min-height:440px;padding:0 14px}.origin-visual.creator-photo img{height:100%;width:100%;object-position:center bottom}}
 @media(max-width:640px){.origin-visual.creator-photo{height:390px;min-height:390px;padding:0 10px}.origin-visual.creator-photo img{height:100%;width:100%;object-position:center bottom}}
+
+
+/* Creator portrait pop-out depth treatment */
+.origin-visual.creator-photo{
+  position:relative;
+  height:440px;
+  min-height:440px;
+  margin-top:54px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  padding:0 12px;
+  overflow:visible;
+  isolation:isolate;
+  border:1px solid #ffffff24;
+  border-radius:24px;
+  background:
+    radial-gradient(ellipse at 50% 42%,#ffffff16,transparent 66%),
+    linear-gradient(145deg,#111,#070707 72%);
+  box-shadow:0 24px 70px #0009,inset 0 1px #ffffff12;
+}
+.origin-visual.creator-photo::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(180deg,#ffffff08,transparent 42%,#0005);
+  pointer-events:none;
+  z-index:0;
+}
+.origin-visual.creator-photo::after{
+  content:"";
+  position:absolute;
+  left:12%;
+  right:12%;
+  bottom:10px;
+  height:24px;
+  border-radius:50%;
+  background:#000;
+  filter:blur(18px);
+  opacity:.8;
+  z-index:1;
+}
+.origin-visual.creator-photo img{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  display:block;
+  width:100%;
+  height:calc(100% + 110px);
+  max-width:100%;
+  object-fit:contain;
+  object-position:center bottom;
+  filter:drop-shadow(0 16px 18px #000b);
+  pointer-events:none;
+}
+@media(max-width:900px){
+  .origin-visual.creator-photo{height:410px;min-height:410px;margin-top:42px}
+  .origin-visual.creator-photo img{height:calc(100% + 90px)}
+}
+@media(max-width:640px){
+  .origin-visual.creator-photo{height:350px;min-height:350px;margin-top:34px}
+  .origin-visual.creator-photo img{height:calc(100% + 72px)}
+}
