@@ -3,19 +3,40 @@
 /* Accessible, lightweight feature switcher for the homepage */
 (()=>{const tabs=[...document.querySelectorAll('[data-saya-tab]')];const panels=[...document.querySelectorAll('[data-saya-panel]')];if(!tabs.length||!panels.length)return;const activate=(name,focus=false)=>{tabs.forEach((tab)=>{const active=tab.dataset.sayaTab===name;tab.classList.toggle('is-active',active);tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active&&focus)tab.focus()});panels.forEach((panel)=>{const active=panel.dataset.sayaPanel===name;panel.hidden=!active;panel.classList.toggle('is-active',active)})};tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>activate(tab.dataset.sayaTab));tab.addEventListener('keydown',(event)=>{let next=index;if(event.key==='ArrowRight')next=(index+1)%tabs.length;else if(event.key==='ArrowLeft')next=(index-1+tabs.length)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();activate(tabs[next].dataset.sayaTab,true)})});activate(tabs[0].dataset.sayaTab)})();
 
-/* Scroll choreography: sections unfold into view, with small elements following in a soft stagger. */
-(()=> {
-  const sections=[...document.querySelectorAll('main > *:not(.feature-jump):not(.nw-hero):not(.cinema-hero)')];
-  const items=[...document.querySelectorAll('.nw-feature,.values-grid article,.workspace-stack > .workspace-card,.detail-grid > .detail-card,.feature-points > li')];
-  sections.forEach(node=>node.classList.add('fold-reveal'));
-  items.forEach((node,index)=>{node.classList.add('fold-item');node.style.setProperty('--fold-delay',`${Math.min(index%4,3)*75}ms`)});
-  const nodes=[...document.querySelectorAll('.reveal,.fold-reveal,.fold-item')];
-  if(!nodes.length)return;
-  if(!('IntersectionObserver' in window)){nodes.forEach(node=>node.classList.add('is-visible'));return}
-  const observer=new IntersectionObserver((entries,obs)=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target)}
+/* Scroll-linked unfolding: progress follows the scroll position in both directions. */
+(()=>{
+  const sectionSelector=[
+    '.nw-intro','.nw-features','.nw-showcase','.nw-quote','.nw-download',
+    '.inner-hero','.feature-story','.workspace-band','.inner-end',
+    '.story-hero','.story-manifesto','.story-values','.story-origin','.story-last'
+  ].join(',');
+  const detailSelector=[
+    '.nw-feature','.values-grid article','.workspace-stack > .workspace-card',
+    '.detail-grid > .detail-card','.feature-points > li'
+  ].join(',');
+  const targets=[...new Set(document.querySelectorAll(sectionSelector+','+detailSelector))];
+  if(!targets.length)return;
+  targets.forEach(node=>node.classList.add('fold-reveal'));
+  const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduceMotion){targets.forEach(node=>node.style.setProperty('--fold-progress','1'));return}
+  let frame=0;
+  const clamp=value=>Math.max(0,Math.min(1,value));
+  const update=()=>{
+    frame=0;
+    const vh=window.innerHeight||800;
+    targets.forEach(node=>{
+      const top=node.getBoundingClientRect().top;
+      const progress=clamp((vh*.9-top)/(vh*.62));
+      const eased=progress*progress*(3-2*progress);
+      node.style.setProperty('--fold-progress',eased.toFixed(4));
+      node.style.setProperty('--fold-angle',((1-eased)*13).toFixed(3)+'deg');
+      node.style.setProperty('--fold-y',((1-eased)*42).toFixed(2)+'px');
+      node.style.setProperty('--fold-scale',(0.978+eased*.022).toFixed(4));
+      node.style.setProperty('--fold-opacity',(0.18+eased*.82).toFixed(4));
     });
-  },{rootMargin:'0px 0px -7% 0px',threshold:0.06});
-  nodes.forEach(node=>observer.observe(node));
+  };
+  const schedule=()=>{if(!frame)frame=requestAnimationFrame(update)};
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule,{passive:true});
+  update();
 })();
