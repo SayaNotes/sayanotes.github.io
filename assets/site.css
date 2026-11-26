@@ -352,3 +352,10 @@
 .origin-visual.creator-photo>span{z-index:2;bottom:18px;text-shadow:0 1px 8px #000}
 @media(max-width:900px){.origin-visual.creator-photo{min-height:420px}.origin-visual.creator-photo img{height:420px}}
 @media(max-width:640px){.origin-visual.creator-photo{min-height:360px}.origin-visual.creator-photo img{height:360px}}
+
+
+/* Refined creator portrait: show the complete cutout without cropping */
+.origin-visual.creator-photo{min-height:480px;height:480px;display:flex;align-items:center;justify-content:center;padding:18px 24px;background:radial-gradient(ellipse at 50% 42%,#ffffff12,transparent 68%),#080808;overflow:hidden}
+.origin-visual.creator-photo img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center center;position:relative;z-index:1}
+@media(max-width:900px){.origin-visual.creator-photo{height:440px;min-height:440px;padding:14px 20px}.origin-visual.creator-photo img{height:100%;width:100%}}
+@media(max-width:640px){.origin-visual.creator-photo{height:390px;min-height:390px;padding:12px 16px}.origin-visual.creator-photo img{height:100%;width:100%}}
