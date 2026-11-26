@@ -7,9 +7,17 @@
 <meta property="og:type" content="website"><meta property="og:title" content="Saya — Some things are beautiful simply because they stay."><meta property="og:description" content="A thoughtful Android workspace for writing, drawing and reading."><meta property="og:image" content="https://sayanotes.github.io/assets/saya-logo.webp">
 <link rel="icon" type="image/webp" href="/assets/saya-logo.webp">
 <link rel="stylesheet" href="/assets/site.css?v=cinematic-1">
+<link rel="stylesheet" href="/assets/saya-build-intro.css?v=2">
 <title>Saya — A place for your thoughts</title>
 </head>
 <body class="saya-home">
+<div class="saya-build-intro" data-saya-build-intro role="status" aria-label="Saya is assembling its welcome experience">
+  <canvas class="saya-build-canvas" aria-hidden="true"></canvas>
+  <div class="saya-build-code" aria-hidden="true"></div>
+  <div class="saya-build-frame"><div class="saya-build-kicker">A QUIETER SPACE FOR IDEAS</div><img class="saya-build-mark" src="/assets/saya-logo.webp" alt=""><h1 class="saya-build-title">SAYA</h1><p class="saya-build-subtitle">A place for your thoughts.</p><div class="saya-build-palette" aria-label="Selecting Saya’s monochrome theme"><i data-build-color></i><i data-build-color></i><i data-build-color></i><i data-build-color></i></div></div>
+  <div class="saya-build-status"><div class="saya-build-status-line"><i data-build-progress></i></div><div class="saya-build-status-text" data-build-status>Preparing the canvas</div></div>
+  <button class="saya-build-skip" type="button" data-build-skip>Skip intro ↗</button>
+</div>
 <header class="site-header"><div class="wrap nav">
 <a class="brand" href="/" aria-label="Saya home"><span class="brand-mark"><img src="/assets/saya-logo.webp" alt=""></span><span>SAYA</span></a>
 <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
@@ -78,4 +86,5 @@
 </main>
 <footer class="site-footer"><div class="wrap footer-row"><a class="footer-brand" href="/">SAYA.</a><span class="footer-note">Some things are beautiful simply because they stay. ❤️</span><div class="footer-links"><a href="/features.html">Features</a><a href="/about.html">Our story</a><a href="https://github.com/SayaNotes" target="_blank" rel="noopener">GitHub ↗</a></div></div></footer>
 <script src="/assets/site.js?v=cinematic-1" defer></script>
+<script src="/assets/saya-build-intro.js?v=2" defer></script>
 </body></html>

@@ -1,0 +1,36 @@
+/* Saya self-assembling intro — isolated from the existing site theme. */
+.saya-build-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;overflow:hidden;background:#050505;color:#f5f5f2;opacity:1;visibility:visible;transition:opacity .9s ease,visibility .9s ease}
+.saya-build-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none}
+.saya-build-intro[hidden]{display:none}
+.saya-build-intro:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(255,255,255,.105),transparent 52%),linear-gradient(120deg,transparent 20%,rgba(255,255,255,.025),transparent 78%);pointer-events:none}
+.saya-build-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.saya-build-frame{position:relative;width:min(760px,calc(100% - 44px));min-height:430px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:44px 26px;text-align:center}
+.saya-build-kicker{font:600 9px/1.4 'DM Sans',sans-serif;letter-spacing:.34em;color:#858580;text-transform:uppercase}
+.saya-build-mark{width:68px;height:68px;object-fit:contain;margin:22px auto 17px;opacity:0;transform:translateY(14px) scale(.88);filter:drop-shadow(0 0 28px rgba(255,255,255,.17));transition:opacity .65s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.saya-build-intro.is-building .saya-build-mark{opacity:1;transform:none}
+.saya-build-title{font:500 clamp(42px,8vw,76px)/.98 Manrope,sans-serif;letter-spacing:.24em;margin:0 0 13px;opacity:0;transform:translateY(12px);transition:opacity .7s ease .35s,transform .7s ease .35s}
+.saya-build-intro.is-building .saya-build-title{opacity:1;transform:none}
+.saya-build-subtitle{font:400 13px/1.7 'DM Sans',sans-serif;color:#a1a19b;letter-spacing:.025em;margin:0;opacity:0;transition:opacity .7s ease .65s}
+.saya-build-intro.is-building .saya-build-subtitle{opacity:1}
+.saya-build-code{position:absolute;left:clamp(18px,8vw,110px);top:clamp(30px,12vh,110px);width:min(260px,32vw);text-align:left;color:#72726e;font:10px/1.9 ui-monospace,SFMono-Regular,monospace;opacity:0;transition:opacity .5s ease}
+.saya-build-code.is-visible{opacity:.76}
+.saya-build-code span{display:block;white-space:nowrap;overflow:hidden}
+.saya-build-code span:before{content:'› ';color:#d2d2cb}
+.saya-build-status{position:absolute;left:50%;bottom:clamp(34px,8vh,76px);transform:translateX(-50%);width:min(270px,65vw);text-align:center}
+.saya-build-status-line{height:1px;background:#ffffff20;overflow:hidden;margin-bottom:12px}
+.saya-build-status-line i{display:block;width:0;height:100%;background:#e8e8e2;box-shadow:0 0 12px #fff;transition:width .12s linear}
+.saya-build-status-text{font:9px/1.5 'DM Sans',sans-serif;color:#777770;letter-spacing:.2em;text-transform:uppercase}
+.saya-build-skip{position:absolute;right:clamp(20px,5vw,60px);bottom:clamp(28px,7vh,60px);border:1px solid #ffffff32;border-radius:999px;padding:9px 15px;background:#ffffff08;color:#c7c7c1;font:10px 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .2s,border-color .2s}
+.saya-build-skip:hover{background:#ffffff16;border-color:#ffffff65}
+.saya-build-intro.is-complete .saya-build-status-text{color:#d0d0c9}
+@media(max-width:640px){.saya-build-frame{min-height:360px;padding:32px 12px}.saya-build-code{top:9vh;left:18px;width:42vw;font-size:8px}.saya-build-mark{width:58px;height:58px}.saya-build-subtitle{max-width:270px}.saya-build-skip{right:18px;bottom:22px}.saya-build-status{bottom:78px}}
+@media(prefers-reduced-motion:reduce){.saya-build-intro,.saya-build-mark,.saya-build-title,.saya-build-subtitle,.saya-build-code{transition:none!important}.saya-build-canvas{display:none}}
+
+.saya-build-palette{display:flex;align-items:center;gap:9px;margin-top:23px;min-height:16px;opacity:.0;transition:opacity .5s ease}
+.saya-build-intro.is-building .saya-build-palette{opacity:1}
+.saya-build-palette i{display:block;width:9px;height:9px;border-radius:50%;background:#343434;border:1px solid #777;transition:transform .35s,border-color .35s,box-shadow .35s}
+.saya-build-palette i:nth-child(2){background:#777}
+.saya-build-palette i:nth-child(3){background:#d8d8d2}
+.saya-build-palette i:nth-child(4){background:#aaa}
+.saya-build-palette i.is-selected{transform:scale(1.55);border-color:#fff;box-shadow:0 0 0 4px #ffffff20,0 0 18px #ffffff65}
+@media(prefers-reduced-motion:reduce){.saya-build-palette{transition:none}.saya-build-palette i{transition:none}}
