@@ -516,7 +516,7 @@
 }
 .fold-reveal.is-visible{opacity:var(--fold-opacity,1);transform:perspective(1500px) rotateX(var(--fold-angle,0deg)) translate3d(0,var(--fold-y,0px),0) scale(var(--fold-scale,1))}
 @media(max-width:640px){
- .fold-reveal{transform:perspective(1100px) rotateX(calc(var(--fold-angle,0deg)*.55)) translate3d(0,calc(var(--fold-y,0px)*.7),0) scale(var(--fold-scale,1));}
+ .fold-reveal{transform:perspective(1100px) rotateX(var(--fold-angle,0deg)) translate3d(0,var(--fold-y,0px),0) scale(var(--fold-scale,1));}
 }
 @media(prefers-reduced-motion:reduce){
  .fold-reveal,.fold-reveal.is-visible{opacity:1!important;transform:none!important;transition:none!important;will-change:auto}
