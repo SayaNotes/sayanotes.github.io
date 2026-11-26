@@ -1,2 +1,2 @@
-# Sayanotes.dev
+sayanotes.github.io
 Be Unique !
