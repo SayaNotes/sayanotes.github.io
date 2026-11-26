@@ -651,3 +651,34 @@ body:after{
   .btn,.nw-button,.feature-card,.detail-card,.values-grid article,.workspace-card,.nw-feature{transition:none}
   .btn:hover,.nw-button:hover,.feature-card:hover,.detail-card:hover,.values-grid article:hover,.workspace-card:hover,.nw-feature:hover{transform:none}
 }
+
+
+/* Performance pass: keep the liquid-glass look without expensive full-page blur. */
+body{background-attachment:scroll!important}
+body:after{display:none}
+.site-header{-webkit-backdrop-filter:blur(16px) saturate(120%);backdrop-filter:blur(16px) saturate(120%)}
+.feature-card,.detail-card,.values-grid article,.workspace-card,.creator-card,
+.download-panel,.feature-visual,.story-visual,.reading-visual,.origin-visual,
+.inner-app-frame,.inner-app-page,.feature-jump,.nw-feature,.nw-showcase-shell,
+.nw-showcase-tabs,.nw-showcase-art,.nw-showcase-paper,.nw-showcase-canvas,
+.nw-showcase-pages>div,.nw-download,.nw-quote,.workspace-stack .workspace-card{
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.018) 58%,rgba(255,255,255,.035)),#090909!important;
+}
+.card-icon,.download-mark,.float-chip,.story-badge,.mock-note{
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+}
+.fold-reveal,.fold-reveal.is-visible{
+  opacity:var(--fold-opacity,1);
+  transform:perspective(1200px) rotateX(var(--fold-angle,0deg)) translate3d(0,var(--fold-y,0px),0) scale(var(--fold-scale,1));
+  filter:none!important;
+  transition:none!important;
+  will-change:auto!important;
+}
+.fold-reveal{transform-origin:50% 0%;backface-visibility:hidden}
+@media(max-width:640px){
+  .site-header{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .fold-reveal,.fold-reveal.is-visible{transform:perspective(900px) rotateX(var(--fold-angle,0deg)) translate3d(0,var(--fold-y,0px),0) scale(var(--fold-scale,1))}
+}
