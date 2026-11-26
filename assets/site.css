@@ -712,3 +712,23 @@ body{isolation:isolate}
 }
 @media(max-width:700px){.saya-live-bg{opacity:.62}}
 @media(prefers-reduced-motion:reduce){.saya-live-bg{display:none}}
+
+
+/* Live wallpaper visibility pass: the ambient canvas sits above the page base,
+   while all page content remains above it and fully interactive. */
+body{isolation:isolate;background-color:#030303}
+.saya-live-bg{z-index:0!important;opacity:.94!important;mix-blend-mode:screen}
+.site-header,body>main,body>.site-footer{position:relative;z-index:1}
+/* Let the moving monochrome light breathe through every page, not only the homepage. */
+.inner-hero,.story-hero,.feature-story,.story-values,.story-origin,
+.story-manifesto,.workspace-band,.inner-end,.story-last,
+.nw-intro,.nw-features,.nw-showcase,.nw-quote,.nw-download{
+  background-color:transparent!important;
+}
+.story-manifesto{background:linear-gradient(110deg,rgba(12,12,12,.56),rgba(6,6,6,.48))!important}
+.story-origin,.workspace-band{background:linear-gradient(145deg,rgba(10,10,10,.58),rgba(5,5,5,.46))!important}
+.feature-jump{background:rgba(8,8,8,.72)!important}
+.inner-end,.story-last{background:radial-gradient(ellipse 48% 65% at 50% 50%,rgba(255,255,255,.075),transparent 75%)!important}
+.nw-quote{background:linear-gradient(180deg,rgba(8,8,8,.30),rgba(8,8,8,.48))!important}
+@media(max-width:700px){.saya-live-bg{opacity:.78!important}}
+@media(prefers-reduced-motion:reduce){.saya-live-bg{display:none!important}}
