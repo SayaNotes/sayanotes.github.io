@@ -61,18 +61,18 @@
 .chapter-track{transform-style:preserve-3d}
 .chapter-panel{transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,opacity,filter}
 .chapter-copy{transform:translateZ(55px);transform-style:preserve-3d;transition:transform .35s ease}
-.stroke-art{transform:translateZ(95px) rotateY(calc(var(--chapter-distance,0)*-13deg)) rotateX(4deg);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
-.mini-device{transform:translateZ(130px) rotateY(calc(-7deg + var(--chapter-distance,0)*-19deg)) rotateX(calc(3deg + var(--chapter-distance,0)*-3deg)) scale(calc(1 - abs(var(--chapter-distance,0))*.04));transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
-.book-art{transform:translateZ(115px) rotateY(calc(var(--chapter-distance,0)*-16deg)) rotateX(calc(4deg + var(--chapter-distance,0)*-3deg));transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.stroke-art{transform:translateZ(95px) rotateY(var(--art-yaw,0deg)) rotateX(4deg);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.mini-device{transform:translateZ(130px) rotateY(var(--device-yaw,-7deg)) rotateX(3deg) scale(.96);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+.book-art{transform:translateZ(115px) rotateY(var(--book-yaw,0deg)) rotateX(4deg);transform-style:preserve-3d;transition:transform .55s cubic-bezier(.2,.7,.2,1)}
 .chapter-panel.is-active .chapter-copy{transform:translateZ(80px)}
 @media(max-width:760px){
  .chapter-sticky{perspective:1000px;perspective-origin:50% 45%;min-height:0;height:calc(100svh - 64px);top:64px}
  .chapter-scroll{height:280vh}
- .chapter-panel{transform:translate3d(0,0,calc(var(--chapter-distance,0)*-110px)) rotateY(calc(var(--chapter-distance,0)*-10deg)) scale(calc(1 - abs(var(--chapter-distance,0))*.06))!important;opacity:var(--chapter-opacity,1)!important;filter:none!important}
+ .chapter-panel{transform:translate3d(0,0,var(--chapter-depth,0px)) rotateY(var(--chapter-yaw,0deg)) scale(var(--chapter-scale,1))!important;opacity:var(--chapter-opacity,1)!important;filter:none!important}
  .chapter-panel .chapter-copy{transform:translateZ(42px)!important;}
- .chapter-panel .stroke-art{transform:translateZ(90px) rotateY(calc(var(--chapter-distance,0)*-17deg)) rotateX(5deg)!important;}
- .chapter-panel .mini-device{transform:translateZ(110px) rotateY(calc(-12deg + var(--chapter-distance,0)*-23deg)) rotateX(7deg) scale(.94)!important;}
- .chapter-panel .book-art{transform:translateZ(100px) rotateY(calc(var(--chapter-distance,0)*-19deg)) rotateX(7deg)!important;}
+ .chapter-panel .stroke-art{transform:translateZ(90px) rotateY(var(--art-yaw,0deg)) rotateX(5deg)!important;}
+ .chapter-panel .mini-device{transform:translateZ(110px) rotateY(var(--device-yaw,-12deg)) rotateX(7deg) scale(.94)!important;}
+ .chapter-panel .book-art{transform:translateZ(100px) rotateY(var(--book-yaw,0deg)) rotateX(7deg)!important;}
  .chapter-track{transition:none}
 }
 @media(prefers-reduced-motion:reduce){.chapter-panel,.chapter-panel .chapter-copy,.chapter-panel .stroke-art,.chapter-panel .mini-device,.chapter-panel .book-art{transform:none!important;transition:none!important}}
