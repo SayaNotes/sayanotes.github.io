@@ -85,6 +85,8 @@
     const within=Math.min(1,(elapsed-activeIndex*stepDuration)/stepDuration);
     const active=targets[activeIndex];
     if(active){
+      const parentSection=active.el.closest('.nw-site > section');
+      if(parentSection){parentSection.classList.add('saya-build-part','saya-built')}
       active.el.classList.add('saya-built');
       const rect=active.el.getBoundingClientRect();
       const safeRect={left:Math.max(8,Math.min(width-8,rect.left)),top:Math.max(8,Math.min(height-8,rect.top)),width:Math.max(18,Math.min(width-rect.left,rect.width)),height:Math.max(18,Math.min(height-rect.top,rect.height))};
