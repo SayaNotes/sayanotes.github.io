@@ -3,81 +3,73 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#050505">
-<meta name="description" content="Discover Saya, a thoughtful Android workspace for handwriting, drawing and PDF reading. A quieter space for ideas to take shape.">
-<meta property="og:type" content="website"><meta property="og:title" content="Saya — Some things are beautiful simply because they stay."><meta property="og:description" content="A thoughtful Android workspace for writing, drawing and reading."><meta property="og:image" content="https://sayanotes.github.io/assets/saya-logo.webp">
+<meta name="description" content="Saya is a thoughtful Android workspace for handwriting, drawing and PDF reading. Made by Sameer Hasan.">
+<meta property="og:type" content="website"><meta property="og:title" content="Saya — A space for your thoughts"><meta property="og:description" content="Write. Draw. Read. Make room for what matters."><meta property="og:image" content="https://sayanotes.github.io/assets/saya-logo.webp">
 <link rel="icon" type="image/webp" href="/assets/saya-logo.webp">
-<link rel="stylesheet" href="/assets/site.css?v=cinematic-1">
-<link rel="stylesheet" href="/assets/saya-self-build.css?v=1">
-<title>Saya — A place for your thoughts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/saya-rebuild.css?v=1">
+<script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("is-building")</script>
+<title>Saya — Built for the way ideas happen</title>
 </head>
-<body class="saya-home">
-<header class="site-header"><div class="wrap nav">
-<a class="brand" href="/" aria-label="Saya home"><span class="brand-mark"><img src="/assets/saya-logo.webp" alt=""></span><span>SAYA</span></a>
-<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-<nav class="nav-links" aria-label="Main navigation"><a href="/features.html">Features</a><a href="/about.html">Our story</a><a class="nav-cta" href="https://github.com/SayaNotes/sayanotes.github.io/releases/download/v1.0.1/Saya.apk" download="Saya.apk">Get Saya <span>↗</span></a></nav>
-</div></header>
-<main class="nw-site">
-<section class="nw-hero">
-<div class="nw-hero-copy">
-<div class="nw-eyebrow"><span></span> A THOUGHTFUL ANDROID WORKSPACE</div>
-<h1>Make room for<br><span>what matters.</span></h1>
-<p class="nw-lead">A quieter space to write by hand, sketch freely and settle into your PDFs. Thoughtfully brought together, so your ideas can take the lead.</p>
-<div class="nw-actions"><a class="nw-button nw-button-light" href="https://github.com/SayaNotes/sayanotes.github.io/releases/download/v1.0.1/Saya.apk" download="Saya.apk">Download Saya <span>↓</span></a><a class="nw-text-link" href="/features.html">Explore features <span>↗</span></a></div>
-<div class="nw-proof"><span class="nw-proof-mark">✳</span><span>Made for Android</span><i></i><span>Free to use</span><i></i><span>Built for focus</span></div>
-</div>
-<div class="nw-product-wrap" aria-label="Illustration of the Saya note-taking workspace">
-<div class="nw-product-glow"></div>
-<div class="nw-product-window">
-<div class="nw-window-bar"><div class="nw-window-brand"><img src="/assets/saya-logo.webp" alt=""><span>Saya</span></div><div class="nw-window-actions"><b></b><b></b><b></b></div></div>
-<div class="nw-workspace">
-<aside class="nw-sidebar"><div class="nw-side-title">LIBRARY</div><div class="nw-side-item active"><span>▤</span> Notes</div><div class="nw-side-item"><span>⌕</span> Explorer</div><div class="nw-side-title nw-side-gap">COLLECTIONS</div><div class="nw-side-item"><span>◷</span> Recent</div><div class="nw-side-item"><span>☆</span> Favourites</div><div class="nw-side-item"><span>⌑</span> Trash</div><div class="nw-side-bottom">Your space, your pace.</div></aside>
-<div class="nw-canvas-area"><div class="nw-canvas-toolbar"><span>Untitled note</span><div><i></i><i></i><i></i><i></i><i></i></div></div><div class="nw-paper"><small>PERSONAL NOTES&nbsp; · &nbsp;01</small><h2>Ideas worth<br>keeping.</h2><div class="nw-paper-stroke"></div><p>Make space for the little thoughts<br>that turn into something more.</p><svg viewBox="0 0 260 100" aria-hidden="true"><path d="M8 66 C45 5 74 102 117 50 S190 12 250 57" fill="none" stroke="#777" stroke-width="2.4" stroke-linecap="round"/><path d="M30 83 Q90 72 145 84 T238 80" fill="none" stroke="#aaa" stroke-width="1.2" stroke-linecap="round"/></svg></div></div>
-</div>
-<div class="nw-window-footer"><span>✎ &nbsp; Write naturally</span><span>◫ &nbsp; Make it yours</span><span>◧ &nbsp; Stay focused</span></div>
-</div>
-<div class="nw-float nw-float-top"><span>✧</span><div><b>Your ideas</b><small>All in one place</small></div></div>
-<div class="nw-float nw-float-bottom"><span>⌁</span><div><b>Made to feel simple</b><small>Nothing in your way</small></div></div>
-</div>
-<div class="nw-hero-bottom"><span>SCROLL TO DISCOVER</span><span>MADE FOR ANDROID · DESIGNED FOR IDEAS</span></div>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<header class="topbar build-item" data-build="01">
+  <a class="brand" href="#top"><img src="/assets/saya-logo.webp" alt=""><span>SAYA<span class="brand-dot">.</span></span></a>
+  <div class="topbar-center"><span class="live-dot"></span> INDEPENDENT ANDROID WORKSPACE <span class="topbar-divider">/</span> EST. WITH CARE</div>
+  <nav><a href="#about">About</a><a href="#experience">Experience</a><a href="#creator">Creator</a><a class="nav-cta" href="https://github.com/SayaNotes/sayanotes.github.io/releases/download/v1.0.1/Saya.apk" download="Saya.apk">Get Saya <span>↗</span></a></nav>
+</header>
+<main id="top">
+<section class="hero section-build" data-build="02">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow build-item" data-build="03"><span class="eyebrow-line"></span> A SMALL SPACE FOR BIG IDEAS</div>
+      <h1 class="build-item" data-build="04">Make room for<br><span>what matters.</span></h1>
+      <p class="hero-lead build-item" data-build="05">Saya brings handwriting, drawing and PDF reading into one thoughtful Android workspace. Less noise around your ideas. More room for them to become something.</p>
+      <div class="hero-actions build-item" data-build="06"><a class="button button-light" href="https://github.com/SayaNotes/sayanotes.github.io/releases/download/v1.0.1/Saya.apk" download="Saya.apk">Explore Saya <span>↗</span></a><a class="text-link" href="#experience">Discover the experience <span>↓</span></a></div>
+      <div class="hero-foot build-item" data-build="07"><span>01 / WRITE</span><span>02 / DRAW</span><span>03 / READ</span></div>
+    </div>
+    <div class="hero-visual build-item" data-build="08" aria-label="Abstract illustration of a calm digital workspace">
+      <div class="visual-orbit orbit-a"></div><div class="visual-orbit orbit-b"></div>
+      <div class="visual-index"><span>FIG. 001</span><span>THE SAYA WORKSPACE</span></div>
+      <div class="workspace-window">
+        <div class="window-top"><div class="window-brand"><img src="/assets/saya-logo.webp" alt=""><b>Saya</b></div><div class="window-controls"><i></i><i></i><i></i></div></div>
+        <div class="window-body"><aside class="window-sidebar"><small>YOUR SPACE</small><span class="active">▤ &nbsp; Notes</span><span>⌕ &nbsp; Explorer</span><small class="side-label">COLLECTIONS</small><span>◷ &nbsp; Recent</span><span>☆ &nbsp; Favourites</span></aside><div class="window-page"><small>PERSONAL NOTES&nbsp; / &nbsp;001</small><h2>Ideas worth<br>keeping.</h2><div class="page-rule"></div><div class="page-rule short"></div><p>Make space for the little thoughts that turn into something more.</p><svg viewBox="0 0 260 85" aria-hidden="true"><path d="M7 60 C45 5 76 93 120 45 S194 10 252 51" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M27 77 Q85 66 142 76 T235 73" fill="none" stroke="currentColor" opacity=".45" stroke-width="1"/></svg></div></div>
+        <div class="window-bottom"><span>✎ &nbsp; WRITE NATURALLY</span><span>◫ &nbsp; MAKE IT YOURS</span><span>◧ &nbsp; STAY FOCUSED</span></div>
+      </div>
+      <div class="float-note note-top"><span class="float-symbol">✳</span><div><b>One considered space</b><small>For the way you think</small></div></div>
+      <div class="float-note note-bottom"><span class="float-symbol">⌁</span><div><b>Nothing in your way</b><small>Just you and the page</small></div></div>
+      <div class="visual-caption">A WORKSPACE THAT KNOWS WHEN TO STEP BACK</div>
+    </div>
+  </div>
+  <div class="hero-bottom build-item" data-build="09"><span>SCROLL TO EXPLORE</span><span>DESIGNED AROUND THE MOMENT OF MAKING</span><span>INDIA&nbsp; · &nbsp;ANDROID</span></div>
 </section>
-<section class="nw-intro nw-section">
-<div class="nw-section-label">A LITTLE MORE ROOM</div><div class="nw-intro-grid"><h2>Not more noise.<br><span>More possibility.</span></h2><p>Some days begin with a sentence. Some with a sketch. Some with a document you want to understand. Saya gives those moments a place to live.</p></div>
+<section class="manifesto section-build" data-build="10" id="about">
+  <div class="section-kicker"><span>01</span> / THE IDEA</div>
+  <div class="manifesto-content"><h2>Not another thing<br>asking for your attention.<br><em>A place to give it.</em></h2><p>Some days begin with a sentence. Some with a sketch. Some with a document you want to understand. Saya gives those moments a place to live — with a calm interface and tools that stay close when you need them.</p></div>
 </section>
-<section class="nw-features nw-section" id="features">
-<div class="nw-section-heading"><div><div class="nw-section-label">MADE FOR YOUR FLOW</div><h2>One space.<br><span>Many ways to think.</span></h2></div><p>Move between writing, drawing and reading without losing the quiet rhythm of your work.</p></div>
-<div class="nw-feature-grid">
-<article class="nw-feature nw-feature-writing"><div class="nw-feature-art"><div class="nw-writing-sheet"><small>01 / A FRESH PAGE</small><strong>Let the<br>thoughts flow.</strong><div class="nw-writing-line"></div><div class="nw-writing-line short"></div><div class="nw-hand-line">one thought at a time</div></div></div><div class="nw-feature-meta"><span>01 — WRITE</span><span>↗</span></div><h3>Write it your way.</h3><p>Put your thoughts on the page with pen styles and a workspace that stays out of your way.</p><a href="/features.html#write">Discover writing <span>↗</span></a></article>
-<article class="nw-feature nw-feature-drawing"><div class="nw-feature-art"><div class="nw-drawing-sheet"><svg viewBox="0 0 320 200" aria-hidden="true"><path d="M35 145 C55 30 105 180 145 90 S225 35 280 120" fill="none" stroke="#eee" stroke-width="3" stroke-linecap="round"/><path d="M55 165 L160 40 L265 165 Z" fill="none" stroke="#858585" stroke-width="1.6"/><circle cx="160" cy="105" r="40" fill="none" stroke="#555" stroke-width="1.2" stroke-dasharray="4 5"/></svg></div></div><div class="nw-feature-meta"><span>02 — DRAW</span><span>↗</span></div><h3>Let ideas take shape.</h3><p>Sketch, work with shapes and rearrange selected content as your ideas evolve.</p><a href="/features.html#draw">Discover drawing <span>↗</span></a></article>
-<article class="nw-feature nw-feature-reading"><div class="nw-feature-art"><div class="nw-reading-sheet"><div class="nw-reading-page"><small>CHAPTER 01</small><b>Read with<br>room to think.</b><i></i><i></i><i class="short"></i><i></i></div><div class="nw-reading-page second"><small>CHAPTER 02</small><b>Stay with<br>the details.</b><i></i><i class="short"></i><i></i></div></div></div><div class="nw-feature-meta"><span>03 — READ</span><span>↗</span></div><h3>Stay with the page.</h3><p>Bring your PDFs into Saya and settle into a focused reading experience.</p><a href="/features.html#read">Discover reading <span>↗</span></a></article>
-</div>
+<section class="experience section-build" data-build="11" id="experience">
+  <div class="section-heading"><div><div class="section-kicker"><span>02</span> / WHAT YOU CAN DO</div><h2>One space.<br><em>Many ways to think.</em></h2></div><p>Move between writing, drawing and reading without losing the quiet rhythm of your work.</p></div>
+  <div class="experience-grid">
+    <article class="experience-card write-card build-item" data-build="12"><div class="card-top"><span>01 — WRITE</span><span>↗</span></div><div class="card-art writing-art"><div class="writing-paper"><small>NOTE TO SELF / 001</small><b>Let the<br>thoughts flow.</b><i></i><i class="short"></i><em>one thought at a time</em></div></div><h3>Write it your way.</h3><p>Put your thoughts on the page with pen styles and a workspace that stays out of your way.</p></article>
+    <article class="experience-card draw-card build-item" data-build="13"><div class="card-top"><span>02 — DRAW</span><span>↗</span></div><div class="card-art drawing-art"><svg viewBox="0 0 330 210" aria-hidden="true"><path d="M25 147 C57 27 104 188 149 94 S242 35 306 123" fill="none" stroke="#eee" stroke-width="2.5" stroke-linecap="round"/><path d="M60 172 L164 34 L270 172 Z" fill="none" stroke="#777" stroke-width="1.4"/><circle cx="164" cy="105" r="42" fill="none" stroke="#555" stroke-dasharray="4 6"/></svg><span class="drawing-cross">+</span></div><h3>Let ideas take shape.</h3><p>Sketch, work with shapes and rearrange selected content as your ideas evolve.</p></article>
+    <article class="experience-card read-card build-item" data-build="14"><div class="card-top"><span>03 — READ</span><span>↗</span></div><div class="card-art reading-art"><div class="reading-pages"><div><small>CHAPTER 01</small><b>Read with<br>room to think.</b><i></i><i></i><i class="short"></i></div><div><small>CHAPTER 02</small><b>Stay with<br>the details.</b><i></i><i class="short"></i><i></i></div></div></div><h3>Stay with the page.</h3><p>Bring your PDFs into Saya and settle into a focused reading experience.</p></article>
+  </div>
 </section>
-<section class="nw-showcase nw-section" id="experience">
-<div class="nw-section-label">A CLOSER LOOK</div>
-<div class="nw-showcase-heading"><h2>Made for the way<br><span>you work.</span></h2><p>Move between a blank page, a quick sketch and a document to read. Your workspace stays calm and familiar.</p></div>
-<div class="nw-showcase-shell">
-<div class="nw-showcase-tabs" role="tablist" aria-label="Explore Saya features">
-<button class="nw-showcase-tab is-active" id="saya-tab-write" role="tab" aria-selected="true" aria-controls="saya-panel-write" data-saya-tab="write">01 <span>Write</span></button>
-<button class="nw-showcase-tab" id="saya-tab-draw" role="tab" aria-selected="false" aria-controls="saya-panel-draw" data-saya-tab="draw">02 <span>Draw</span></button>
-<button class="nw-showcase-tab" id="saya-tab-read" role="tab" aria-selected="false" aria-controls="saya-panel-read" data-saya-tab="read">03 <span>Read</span></button>
-</div>
-<div class="nw-showcase-panel is-active" id="saya-panel-write" role="tabpanel" aria-labelledby="saya-tab-write" data-saya-panel="write">
-<div class="nw-showcase-copy"><div class="nw-section-label">CAPTURE A THOUGHT</div><h3>Give every idea<br>a place to land.</h3><p>Open a page and write naturally. Choose a pen style and make the page feel like your own.</p><a href="/features.html#write">Explore writing tools ↗</a></div>
-<div class="nw-showcase-art"><div class="nw-showcase-paper"><small>NOTE  /  001</small><strong>A thought<br>worth keeping.</strong><i></i><i class="short"></i><em>one line at a time</em></div></div>
-</div>
-<div class="nw-showcase-panel" id="saya-panel-draw" role="tabpanel" aria-labelledby="saya-tab-draw" data-saya-panel="draw" hidden>
-<div class="nw-showcase-copy"><div class="nw-section-label">THINK VISUALLY</div><h3>Let your ideas<br>take shape.</h3><p>Sketch freely, work with shapes and use lasso selection to move, resize or rotate selected content.</p><a href="/features.html#draw">Explore drawing tools ↗</a></div>
-<div class="nw-showcase-art"><div class="nw-showcase-canvas"><svg viewBox="0 0 360 230" aria-hidden="true"><path d="M28 160 C65 20 100 205 155 103 S255 36 328 130" fill="none" stroke="#eee" stroke-width="3" stroke-linecap="round"/><path d="M66 185 L178 38 L292 185 Z" fill="none" stroke="#999" stroke-width="2"/><circle cx="178" cy="112" r="47" fill="none" stroke="#555" stroke-width="1.5" stroke-dasharray="5 7"/></svg></div></div>
-</div>
-<div class="nw-showcase-panel" id="saya-panel-read" role="tabpanel" aria-labelledby="saya-tab-read" data-saya-panel="read" hidden>
-<div class="nw-showcase-copy"><div class="nw-section-label">MAKE SPACE TO READ</div><h3>Stay with<br>what matters.</h3><p>Bring PDFs into Saya and move through your documents in a focused reading workspace.</p><a href="/features.html#read">Explore PDF reading ↗</a></div>
-<div class="nw-showcase-art"><div class="nw-showcase-pages"><div><small>CHAPTER 01</small><b>Read with<br>room to think.</b><i></i><i></i><i class="short"></i></div><div><small>CHAPTER 02</small><b>Stay with<br>the details.</b><i></i><i class="short"></i><i></i></div></div></div>
-</div>
-</div>
+<section class="principles section-build" data-build="15">
+  <div class="section-kicker"><span>03</span> / OUR APPROACH</div>
+  <div class="principle-list"><div><span>01</span><h3>Thoughtful by default.</h3><p>Useful tools, considered placement, and space to focus.</p></div><div><span>02</span><h3>Made to feel personal.</h3><p>A workspace that can become familiar, comfortable and yours.</p></div><div><span>03</span><h3>Always becoming.</h3><p>Built through curiosity, experimentation and small improvements.</p></div></div>
 </section>
-<section class="nw-quote"><div class="nw-quote-mark">“</div><blockquote>Some things are beautiful<br>simply because <span>they stay.</span></blockquote><p>THE THOUGHT BEHIND SAYA</p></section>
-<section class="nw-download" id="download"><div class="nw-download-glow"></div><div class="nw-download-content"><img src="/assets/saya-logo.webp" alt="Saya app logo"><div class="nw-section-label">YOUR NEXT PAGE STARTS HERE</div><h2>Make room<br>for <span>Saya.</span></h2><p>A quieter space for the things you want to keep.</p><a class="nw-button nw-button-light" href="https://github.com/SayaNotes/sayanotes.github.io/releases/download/v1.0.1/Saya.apk" download="Saya.apk">Download for Android <span>↓</span></a><div class="nw-version">VERSION 1.0.1 <i></i> FREE <i></i> ANDROID</div><a class="nw-release" href="https://github.com/SayaNotes/sayanotes.github.io/releases/tag/v1.0.1" target="_blank" rel="noopener">View release details ↗</a></div></section>
+<section class="creator section-build" data-build="16" id="creator">
+  <div class="creator-visual"><div class="creator-image-wrap"><img src="/assets/accfd965-c010-479a-b0eb-f60e287a0022-Photoroom.png" alt="Sameer Hasan, creator of Saya"></div><div class="creator-stamp">INDEPENDENTLY<br>MADE WITH CARE</div></div>
+  <div class="creator-copy"><div class="section-kicker"><span>04</span> / THE PERSON BEHIND IT</div><h2>Made with curiosity.<br><em>Shaped with care.</em></h2><p>Hi, I'm <strong>Sameer Hasan</strong> — the independent creator behind Saya. I started this project with a simple idea: make a thoughtful, comfortable space where people can write, draw, organise their notes and read PDFs without getting in the way of their ideas.</p><p>Saya keeps evolving through experimentation and small improvements. The goal stays simple: make it feel faster, smoother and more useful, while keeping the experience calm and personal.</p><a class="text-link" href="https://github.com/SayaNotes" target="_blank" rel="noopener">Follow the project on GitHub <span>↗</span></a></div>
+</section>
+<section class="closing section-build" data-build="17">
+  <div class="closing-mark"><img src="/assets/saya-logo.webp" alt="Saya"></div><div class="section-kicker">A PLACE FOR WHAT MATTERS</div><h2>Some things are beautiful<br>simply because <em>they stay.</em></h2><p>Make room for your next thought.</p><a class="button button-light" href="https://github.com/SayaNotes/sayanotes.github.io/releases/download/v1.0.1/Saya.apk" download="Saya.apk">Get Saya for Android <span>↓</span></a><div class="release-note">VERSION 1.0.1 <i></i> FREE TO USE <i></i> ANDROID</div>
+</section>
 </main>
-<footer class="site-footer"><div class="wrap footer-row"><a class="footer-brand" href="/">SAYA.</a><span class="footer-note">Some things are beautiful simply because they stay. ❤️</span><div class="footer-links"><a href="/features.html">Features</a><a href="/about.html">Our story</a><a href="https://github.com/SayaNotes" target="_blank" rel="noopener">GitHub ↗</a></div></div></footer>
-<script src="/assets/site.js?v=cinematic-1" defer></script>
-<script src="/assets/saya-self-build.js?v=1" defer></script>
+<footer class="footer build-item" data-build="18"><a class="footer-brand" href="#top">SAYA<span>.</span></a><span>Some things are beautiful simply because they stay.</span><div><a href="https://github.com/SayaNotes" target="_blank" rel="noopener">GITHUB ↗</a><a href="https://github.com/SayaNotes/sayanotes.github.io/releases/tag/v1.0.1" target="_blank" rel="noopener">RELEASES ↗</a></div><small>© 2026 SAYA. MADE WITH CARE.</small></footer>
+<div class="builder-console" aria-live="polite"><span class="console-dot"></span><span class="console-label">ASSEMBLING SAYA</span><span class="console-separator">/</span><span class="console-task">INITIALISING INTERFACE</span><span class="console-progress">00%</span></div>
+<div class="cursor-layer" aria-hidden="true"></div>
+<script src="/assets/saya-rebuild.js?v=1" defer></script>
 </body></html>
