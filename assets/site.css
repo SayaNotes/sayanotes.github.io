@@ -89,3 +89,10 @@
  .chapter-panel.is-active .chapter-copy{transform:translateZ(100px)!important}
 }
 @media(min-width:761px){.chapter-panel{transform-style:preserve-3d}.chapter-panel .stroke-art{transform:translateZ(160px) rotateY(var(--art-yaw,0deg)) rotateX(8deg) scale(1.08)}.chapter-panel .mini-device{transform:translateZ(190px) rotateY(var(--device-yaw,-7deg)) rotateX(9deg) scale(1.04)}.chapter-panel .book-art{transform:translateZ(170px) rotateY(var(--book-yaw,0deg)) rotateX(8deg) scale(1.08)}}
+
+/* Fluid scroll response: transforms follow the finger without transition lag */
+.chapter-track,.chapter-panel,.chapter-panel .chapter-copy,.chapter-panel .stroke-art,.chapter-panel .mini-device,.chapter-panel .book-art{transition:none!important;backface-visibility:hidden}
+.chapter-panel{filter:none!important;will-change:transform,opacity}
+.chapter-panel .chapter-copy,.chapter-panel .stroke-art,.chapter-panel .mini-device,.chapter-panel .book-art{will-change:transform}
+.chapter-progress-fill{transform-origin:left center;will-change:transform}
+@media(max-width:760px){.chapter-scroll{touch-action:pan-y;overscroll-behavior:contain}.chapter-sticky{contain:layout paint;}.chapter-panel{filter:none!important}}
