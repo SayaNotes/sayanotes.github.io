@@ -76,3 +76,16 @@
  .chapter-track{transition:none}
 }
 @media(prefers-reduced-motion:reduce){.chapter-panel,.chapter-panel .chapter-copy,.chapter-panel .stroke-art,.chapter-panel .mini-device,.chapter-panel .book-art{transform:none!important;transition:none!important}}
+
+/* Strong, visible 3D scene motion — tuned for touch screens */
+@media(max-width:760px){
+ .chapter-scroll{height:320vh!important}
+ .chapter-sticky{height:calc(100svh - 70px)!important;top:70px!important;perspective:850px!important;perspective-origin:50% 50%!important}
+ .chapter-panel{transform:translate3d(0,0,var(--chapter-depth,0px)) rotateY(var(--chapter-yaw,0deg)) scale(var(--chapter-scale,1))!important;opacity:var(--chapter-opacity,1)!important;filter:none!important;transform-origin:50% 50%!important;}
+ .chapter-panel .chapter-copy{transform:translateZ(65px)!important}
+ .chapter-panel .stroke-art{transform:translateZ(145px) rotateY(var(--art-yaw,0deg)) rotateX(9deg) scale(1.08)!important}
+ .chapter-panel .mini-device{transform:translateZ(175px) rotateY(var(--device-yaw,-18deg)) rotateX(12deg) scale(1.04)!important;box-shadow:0 45px 110px #000,0 0 0 1px #ffffff22,inset 0 1px #ffffff55!important}
+ .chapter-panel .book-art{transform:translateZ(155px) rotateY(var(--book-yaw,0deg)) rotateX(10deg) scale(1.08)!important}
+ .chapter-panel.is-active .chapter-copy{transform:translateZ(100px)!important}
+}
+@media(min-width:761px){.chapter-panel{transform-style:preserve-3d}.chapter-panel .stroke-art{transform:translateZ(160px) rotateY(var(--art-yaw,0deg)) rotateX(8deg) scale(1.08)}.chapter-panel .mini-device{transform:translateZ(190px) rotateY(var(--device-yaw,-7deg)) rotateX(9deg) scale(1.04)}.chapter-panel .book-art{transform:translateZ(170px) rotateY(var(--book-yaw,0deg)) rotateX(8deg) scale(1.08)}}
