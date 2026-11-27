@@ -43,3 +43,9 @@ html.is-building .assembly-hud{opacity:1;transform:translateY(0)}
 .builder-console{z-index:31}
 @media(max-width:680px){.assembly-hud{left:10px;bottom:55px;width:min(320px,calc(100vw - 20px));padding:10px 12px}.assembly-code{font-size:8px;line-height:1.65;margin:7px 0 9px}.assembly-palette{gap:8px}.assembly-palette>span{font-size:7px}}
 @media(prefers-reduced-motion:reduce){.assembly-hud{display:none!important}}
+
+html.is-building .build-item.building-now{opacity:1;transform:none;clip-path:inset(0);transition:opacity .25s ease,transform .35s ease,clip-path .45s cubic-bezier(.2,.7,.2,1)}
+html.is-building .section-build.building-now{opacity:1;transition:opacity .3s ease}
+html.is-building .build-item.building-now:not(.built){animation:assembleIn .56s cubic-bezier(.2,.7,.2,1) both}
+@keyframes assembleIn{0%{clip-path:inset(0 100% 0 0);filter:brightness(1.8)}65%{clip-path:inset(0 0 0 0);filter:brightness(1.18)}100%{clip-path:inset(0);filter:brightness(1)}}
+.assembly-hud.assembled{opacity:0;transform:translateY(10px)}
