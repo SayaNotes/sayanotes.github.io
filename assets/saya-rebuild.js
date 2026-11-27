@@ -66,21 +66,31 @@
    raf=requestAnimationFrame(animateBuild);
  };
  const runCode=()=>{
-   let line=0;
-   const typeNext=()=>{
+   const original=codeLines.map(el=>el.innerHTML);
+   const source=codeLines.map(el=>el.textContent);
+   codeLines.forEach(el=>{el.textContent='';el.classList.remove('active')});
+   let line=0,pos=0;
+   const typeChar=()=>{
      if(done)return;
-     codeLines.forEach((el,i)=>el.classList.toggle('active',i===line));
-     if(line<codeLines.length){line++;setTimeout(typeNext,430);return}
-     let swatch=0;
-     const choose=()=>{
-       if(done)return;
-       swatches.forEach((el,i)=>el.classList.toggle('selected',i===swatch));
-       if(swatch<swatches.length-1){swatch++;setTimeout(choose,250);return}
-       buildStart=performance.now();raf=requestAnimationFrame(animateBuild);
-     };
-     setTimeout(choose,260);
+     if(line>=codeLines.length){
+       let swatch=0;
+       const choose=()=>{
+         if(done)return;
+         swatches.forEach((el,i)=>el.classList.toggle('selected',i===swatch));
+         if(swatch<swatches.length-1){swatch++;setTimeout(choose,260);return}
+         buildStart=performance.now();raf=requestAnimationFrame(animateBuild);
+       };
+       setTimeout(choose,260);return;
+     }
+     const el=codeLines[line],value=source[line];
+     el.classList.add('active');
+     el.textContent=value.slice(0,++pos);
+     if(pos<value.length){setTimeout(typeChar,17);return}
+     el.innerHTML=original[line];
+     line++;pos=0;
+     setTimeout(typeChar,180);
    };
-   setTimeout(typeNext,350);
+   setTimeout(typeChar,350);
  };
  const skip=()=>finish();
  window.addEventListener('pointerdown',skip,{once:true,passive:true});
