@@ -58,3 +58,9 @@ html.is-building .build-item.building-now:not(.built){animation:assembleIn .56s 
 .player-meta{min-width:0;flex:1}.player-title,.player-status{display:flex;align-items:center;gap:7px}.player-title{font-size:9px;letter-spacing:.08em}.player-agents{margin-left:auto;color:#aaa;font-size:8px}.player-live{width:6px;height:6px;border-radius:50%;background:#d7d7ce;box-shadow:0 0 10px #fff8;animation:assemblyPulse 1.2s infinite}.player-track{height:2px;background:#444;margin:7px 0 5px;overflow:hidden}.player-track span{display:block;width:0;height:100%;background:#e7e7df;transition:width .12s linear}.player-status{justify-content:space-between;color:#92928b;font-size:8px;text-transform:uppercase;letter-spacing:.04em}.player-mode{font-size:8px!important;letter-spacing:.04em}.player-mode.active{border-color:#d7d7ce;background:#282824}.assembly-player.is-complete{border-color:#ffffff22}.assembly-player.is-complete .player-live{animation:none;opacity:.35}
 @media(max-width:560px){.assembly-player{bottom:10px;gap:7px;padding:8px;width:calc(100vw - 18px);min-height:58px}.assembly-player button{min-width:30px;height:31px;padding:0 6px}.player-title{font-size:8px}.player-status{font-size:7px}.player-agents{font-size:7px}}
 @media(prefers-reduced-motion:reduce){.assembly-player{backdrop-filter:none}.player-live{animation:none}}
+
+/* Smooth, fluid cursor motion and a player that exits after assembly */
+.build-cursor{transition:opacity .18s ease;will-change:transform;backface-visibility:hidden;transform:translateZ(0)}
+.build-cursor svg{transition:transform .18s cubic-bezier(.2,.8,.2,1);transform-origin:1px 1px}
+.build-cursor.clicking svg{transform:scale(.88) rotate(-4deg)}
+.assembly-player.is-dismissed{opacity:0;transform:translate(-50%,18px);pointer-events:none;visibility:hidden;transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1),visibility 0s linear .65s}
