@@ -15,7 +15,7 @@
   layer.appendChild(el);return {el,i,phase:i/18,x:innerWidth/2,y:innerHeight/2,vx:0,vy:0,tx:innerWidth/2,ty:innerHeight/2};
  });
  const speedSteps=[.65,1,1.35,1.8],speedLabels=['0.65×','1×','1.35×','1.8×'];
- let speedIndex=1,speed=1,playing=true,completed=false,stage='code',codeTimer=null,raf=0,lastFrame=0,elapsed=0,lastIndex=-1,runId=0;
+ let speedIndex=1,speed=1,playing=true,completed=false,stage='code',codeTimer=null,dismissTimer=null,raf=0,lastFrame=0,elapsed=0,lastIndex=-1,runId=0;
  const codeOriginal=codeLines.map(el=>el.innerHTML),codeText=codeLines.map(el=>el.textContent);
  const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
  const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
@@ -52,7 +52,7 @@
  const finish=()=>{
   completed=true;playing=false;stage='done';items.forEach(el=>{el.classList.remove('building-now');el.classList.add('built')});
   root.classList.remove('is-building');cursors.forEach(c=>c.el.remove());hud?.classList.add('assembled');consoleBox?.classList.add('done');
-  if(raf)cancelAnimationFrame(raf);clearTimeout(codeTimer);setProgress(1);setStatus('Experience assembled');syncControls();player?.classList.add('is-complete');setTimeout(()=>player?.classList.add('is-dismissed'),950);
+  if(raf)cancelAnimationFrame(raf);clearTimeout(codeTimer);setProgress(1);setStatus('Experience assembled');syncControls();player?.classList.add('is-complete');clearTimeout(dismissTimer);dismissTimer=setTimeout(()=>player?.classList.add('is-dismissed'),950);
  };
  const frame=now=>{
   if(!playing||stage!=='build')return;
@@ -80,7 +80,7 @@
   };
   codeTimer=setTimeout(tick,250);
  };
- const replay=()=>{player?.classList.remove('is-dismissed');runId++;clearTimeout(codeTimer);if(raf)cancelAnimationFrame(raf);elapsed=0;completed=false;playing=true;stage='code';lastIndex=-1;codeLines.forEach((el,i)=>{el.innerHTML=codeOriginal[i];el.classList.remove('active')});swatches.forEach(el=>el.classList.remove('selected'));items.forEach(el=>el.classList.remove('built','building-now'));root.classList.add('is-building');hud?.classList.remove('assembled');consoleBox?.classList.remove('done');cursors.forEach(c=>{if(!c.el.isConnected)layer.appendChild(c.el)});setProgress(0);syncControls();const id=runId;typeCode(id)};
+ const replay=()=>{clearTimeout(dismissTimer);player?.classList.remove('is-dismissed');runId++;clearTimeout(codeTimer);if(raf)cancelAnimationFrame(raf);elapsed=0;completed=false;playing=true;stage='code';lastIndex=-1;codeLines.forEach((el,i)=>{el.innerHTML=codeOriginal[i];el.classList.remove('active')});swatches.forEach(el=>el.classList.remove('selected'));items.forEach(el=>el.classList.remove('built','building-now'));root.classList.add('is-building');hud?.classList.remove('assembled');consoleBox?.classList.remove('done');cursors.forEach(c=>{if(!c.el.isConnected)layer.appendChild(c.el)});setProgress(0);syncControls();const id=runId;typeCode(id)};
  const toggle=()=>{
   if(completed){replay();return}
   playing=!playing;syncControls();
@@ -92,7 +92,7 @@
  player?.querySelector('[data-player="replay"]')?.addEventListener('click',replay);
  player?.querySelector('[data-player="speed"]')?.addEventListener('click',()=>{speedIndex=(speedIndex+1)%speedSteps.length;speed=speedSteps[speedIndex];syncControls()});
  player?.querySelector('[data-player="mode"]')?.addEventListener('click',e=>{const btn=e.currentTarget;const active=btn.classList.toggle('active');btn.textContent=active?'AUTO ON':'AUTO';if(active&&completed)replay()});
- if(reduced){items.forEach(el=>el.classList.add('built'));hud?.classList.add('assembled');player?.classList.add('is-complete');player?.classList.add('reduced-ready');setStatus('Experience ready');setProgress(1);playing=false;completed=true;syncControls();cursors.forEach(c=>c.el.remove());return}
+ if(reduced){items.forEach(el=>el.classList.add('built'));hud?.classList.add('assembled');player?.classList.add('is-complete');player?.classList.add('reduced-ready');player?.classList.add('is-dismissed');setStatus('Experience ready');setProgress(1);playing=false;completed=true;syncControls();cursors.forEach(c=>c.el.remove());return}
  replay();
  window.addEventListener('keydown',e=>{const tag=e.target?.tagName?.toLowerCase();if(tag==='input'||tag==='textarea'||e.target?.isContentEditable)return;if(e.code==='Space'){e.preventDefault();toggle()}else if(e.key.toLowerCase()==='r'){e.preventDefault();replay()}},{passive:false});
  window.addEventListener('pagehide',()=>{if(raf)cancelAnimationFrame(raf);clearTimeout(codeTimer)},{once:true});
