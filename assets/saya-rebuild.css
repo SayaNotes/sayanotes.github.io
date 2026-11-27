@@ -16,3 +16,36 @@ html.is-building .build-item{opacity:0;transform:translateY(15px);clip-path:inse
 @media(max-width:980px){.topbar-center{display:none}.hero-grid{grid-template-columns:1fr;gap:35px}.hero-copy{max-width:700px}.hero-visual{min-height:500px}.manifesto-content{grid-template-columns:1fr;gap:25px}.section-heading{align-items:start;flex-direction:column}.section-heading>p{max-width:540px}.principles{grid-template-columns:1fr;gap:35px}.creator{gap:6vw}.footer{grid-template-columns:1fr 2fr 1fr}.footer small{grid-column:1/-1;text-align:right}}
 @media(max-width:680px){.topbar{height:64px;padding:0 18px}.topbar nav{gap:12px}.topbar nav a:not(.nav-cta){display:none}.topbar nav .nav-cta{padding:8px 10px;font-size:8px}.hero{padding:52px 20px 22px;min-height:auto}.hero-grid{gap:22px}.hero h1{font-size:clamp(48px,13vw,76px)}.hero-lead{font-size:13px}.hero-foot{gap:9px;margin-top:36px;font-size:7px}.hero-foot span+span:before{margin-right:9px}.hero-visual{min-height:370px}.orbit-a{width:330px;height:330px}.orbit-b{width:380px;height:380px}.workspace-window{width:100%;transform:none}.window-body{grid-template-columns:95px 1fr;min-height:240px}.window-sidebar{padding:15px 7px;font-size:8px}.window-page{margin:12px;padding:16px 13px;min-height:210px}.window-page h2{font-size:27px}.window-page p{font-size:8px}.window-bottom{font-size:6px;padding:10px 8px}.float-note{padding:8px 10px}.float-note b{font-size:8px}.float-note small{font-size:7px}.note-top{right:-3px;top:9%}.note-bottom{left:-3px;bottom:9%}.visual-caption{font-size:6px}.visual-index{font-size:6px}.hero-bottom{font-size:6px;gap:8px;flex-wrap:wrap}.hero-bottom span:nth-child(2){display:none}.manifesto,.experience,.principles,.creator{padding:85px 21px}.manifesto h2,.section-heading h2,.creator-copy h2{font-size:clamp(37px,10vw,56px)}.experience-grid{grid-template-columns:1fr;gap:12px}.card-art{height:215px}.experience-card{padding:17px}.principle-list>div{grid-template-columns:25px 1fr;gap:10px}.principle-list p{grid-column:2}.creator{grid-template-columns:1fr;gap:50px}.creator-visual{max-width:300px}.creator-copy{max-width:600px}.creator-stamp{right:-12px}.closing{padding:100px 20px}.closing h2{font-size:clamp(36px,10vw,57px)}.footer{grid-template-columns:1fr 1fr;gap:13px;padding:25px 20px}.footer>span{grid-column:1/-1;grid-row:2}.footer>div{justify-content:flex-end}.footer small{grid-column:1/-1;text-align:left}.builder-console{bottom:8px;max-width:calc(100vw - 20px);font-size:7px;gap:7px}.console-task{overflow:hidden;text-overflow:ellipsis;max-width:130px}.cursor-tag{display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.cursor-layer,.builder-console{display:none!important}html.is-building .build-item,html.is-building .section-build{opacity:1!important;transform:none!important;clip-path:none!important}}
+
+/* Live construction layer */
+.assembly-hud{position:fixed;z-index:24;left:clamp(14px,3vw,42px);bottom:62px;width:min(360px,calc(100vw - 28px));padding:13px 15px 12px;background:rgba(9,9,9,.94);border:1px solid #ffffff38;box-shadow:0 18px 70px #000c;backdrop-filter:blur(18px);font:8px var(--mono);letter-spacing:.07em;color:#92928c;opacity:0;transform:translateY(12px);transition:opacity .5s,transform .5s;pointer-events:none}
+html.is-building .assembly-hud{opacity:1;transform:translateY(0)}
+.assembly-hud-head,.assembly-code-head,.assembly-palette{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.assembly-hud-head{padding-bottom:10px;border-bottom:1px solid #ffffff20;color:#d0d0c9}
+.assembly-live{width:6px;height:6px;border-radius:50%;background:#d8d8ce;box-shadow:0 0 12px #fff8;margin-right:-3px;animation:assemblyPulse 1.2s infinite}
+.assembly-agents{margin-left:auto;color:#b7b7ae}
+.assembly-code-head{padding-top:12px;color:#777}
+.assembly-code{margin:10px 0 12px;padding:0;white-space:pre-wrap;font:9px/1.9 var(--mono);color:#b9b9b1}
+.assembly-code .code-line{display:block;opacity:.28;transition:opacity .25s,color .25s}
+.assembly-code .code-line.active{opacity:1;color:#f0f0e9}
+.assembly-code i{font-style:normal;color:#a6b69c}.assembly-code b{font-weight:400;color:#d5c49c}
+.assembly-palette{border-top:1px solid #ffffff20;padding-top:10px;flex-wrap:wrap}
+.assembly-palette>span{color:#777;margin-right:auto}
+.assembly-palette i{width:13px;height:13px;border-radius:50%;border:1px solid #ffffff55;opacity:.4;transition:transform .25s,opacity .25s}
+.assembly-palette i:nth-of-type(1){background:#050505}.assembly-palette i:nth-of-type(2){background:#777}.assembly-palette i:nth-of-type(3){background:#d8d8d0}.assembly-palette i:nth-of-type(4){background:#a6b69c}
+.assembly-palette i.selected{opacity:1;transform:scale(1.25);outline:1px solid #eee;outline-offset:2px}
+.assembly-palette b{font-weight:400;color:#c4c4bb}
+.build-cursor{transition:opacity .12s;z-index:1}
+.build-cursor svg{width:17px;height:22px}
+.build-cursor .cursor-tag{opacity:1;font-size:6px;background:#090909eF}
+.build-cursor.clicking svg{transform:scale(.82);transform-origin:1px 1px}
+@keyframes assemblyPulse{50%{opacity:.35;box-shadow:0 0 3px #fff3}}
+.builder-console{z-index:31}
+@media(max-width:680px){.assembly-hud{left:10px;bottom:55px;width:min(320px,calc(100vw - 20px));padding:10px 12px}.assembly-code{font-size:8px;line-height:1.65;margin:7px 0 9px}.assembly-palette{gap:8px}.assembly-palette>span{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.assembly-hud{display:none!important}}
+
+html.is-building .build-item.building-now{opacity:1;transform:none;clip-path:inset(0);transition:opacity .25s ease,transform .35s ease,clip-path .45s cubic-bezier(.2,.7,.2,1)}
+html.is-building .section-build.building-now{opacity:1;transition:opacity .3s ease}
+html.is-building .build-item.building-now:not(.built){animation:assembleIn .56s cubic-bezier(.2,.7,.2,1) both}
+@keyframes assembleIn{0%{clip-path:inset(0 100% 0 0);filter:brightness(1.8)}65%{clip-path:inset(0 0 0 0);filter:brightness(1.18)}100%{clip-path:inset(0);filter:brightness(1)}}
+.assembly-hud.assembled{opacity:0;transform:translateY(10px)}
